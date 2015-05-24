@@ -18,3 +18,12 @@
  */
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
+
+ .avatar {
+   border: 0;
+   border-radius: 5px;
+   display :block;
+   height: 32px;
+   width: 32px;
+   margin-top: 8px;
+ }

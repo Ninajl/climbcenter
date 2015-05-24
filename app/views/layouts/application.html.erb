@@ -9,7 +9,6 @@
   <% else %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <% end %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -46,34 +45,48 @@
         <li><a href="#">Skill Test/Survey</a></li>
         <li><a href="#">Videos</a></li>
         <li><a href="#">Climbing Gyms</a></li>
-
-
       </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
-      <!-- <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <% if current_user %>
+        <li>
+          <%= image_tag current_user.image, class:'avatar' %>
+        </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul> -->
-        <!-- </li>
-      </ul> -->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <%= current_user.name %>
+            <!-- <span class="caret"></span> -->
+          </a>
+            <!-- <ul class="dropdown-menu" role="menu"> -->
+              <li>
+                <%= link_to "Log Out", signout_path %>
+              </li>
+            <!-- </ul> -->
+        </li>
+      </ul>
+          <% end %>
+
+
+  <!-- <% if current_user %>
+  <li class="settings hidden-phone">
+  <a href="/signout" role="button" alt="sign out">
+    <i class="icon-signout"></i>
+  </a>
+  </li>
+  <% else %>
+  <li class="settings hidden-phone">
+  <a href="/auth/facebook" role="button" alt="sign in">
+    <i class="icon-signin"></i>
+  </a>
+  </li>
+  <% end %> -->
+
+  </div>
 </nav>
 <% end %>
 
-<div class="container">
 
 <%= yield %>
 </div>
