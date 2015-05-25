@@ -49,8 +49,11 @@
    text-decoration: none;
    color: white;
  }
- p {
+
+ .rotation {
    color: black;
+   border: 3px solid yellow;
+   border-radius: 20px;
  }
 
 #hold {
