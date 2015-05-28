@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= bootstrap
 //= bootstrap.min
-//= grayscale
 //= facebook
 //= jquery.easing.min
 //= jquery
@@ -23,10 +22,14 @@
 //= require turbolinks
 //= require_tree .
 
-// facebookShare =  function(d, s, id) {
-//     var js, fjs = d.getElementsByTagName(s)[0];
-//     if (d.getElementById(id)) return;
-//     js = d.createElement(s); js.id = id;
-//     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-//     fjs.parentNode.insertBefore(js, fjs);
-//     }(document, 'script', 'facebook-jssdk');
+
+ function setHold(event) {
+  var name = event.currentTarget.id
+  var picture_container = document.getElementById('image')
+  var title = document.getElementById('type')
+  var rotation = document.getElementById('rotation')
+  var movement_text = document.getElementById(name)
+      picture_container.src =  "assets/" + name + ".png"
+      title.innerHTML = name
+      rotation.innerHTML = movement_text.dataset.movement
+}

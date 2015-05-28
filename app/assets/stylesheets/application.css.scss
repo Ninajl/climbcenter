@@ -34,16 +34,16 @@
    height: 100%;
  }
  .col-md-2 {
-   position: fixed;
+   position: absolute;
    height: 100%;
    width:25%;
    background-color: #23404e;
    border-height: 100%;
  }
 
- h1 h4{
-   color: white;
- }
+ // h1 h4{
+ //   color: white;
+ // }
 
  a {
    text-decoration: none;
@@ -52,13 +52,11 @@
 
  .rotation {
    color: black;
-   border: 3px solid yellow;
    border-radius: 20px;
  }
 
-#hold {
-  position:relative;
-  list-style: none;
+ .hold {
+  list-style-type: none;
   overflow: hidden;
   height: 30px;
   font-size: 25px;
@@ -71,11 +69,20 @@
    color: black;
  }
 
-.col-md-5 {
+ .col-md-5 {
   position: fixed;
   border: 2px solid black;
 }
 
-.direction {
+ .direction {
   color:black
 }
+
+.movement {
+  border: 2px solid black;
+
+}
+
+ h1 {
+   margin-top:10px;
+ }
