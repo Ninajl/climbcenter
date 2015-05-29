@@ -18,6 +18,7 @@
 //= facebook
 //= jquery.easing.min
 //= jquery
+//= rotation
 //= jug
 //= require turbolinks
 //= require_tree .
