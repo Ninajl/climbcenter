@@ -23,6 +23,9 @@
 //= require_tree .
 
 
+
+
+
  function setHold(event) {
   var name = event.currentTarget.id
   var picture_container = document.getElementById('image')

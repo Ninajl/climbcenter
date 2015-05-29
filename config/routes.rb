@@ -6,7 +6,7 @@ Rails.application.routes.draw do
    root 'welcome#index'
    get 'climbers' => 'climbers#index'
 
-   match 'auth/:provider/callback', to: 'sessions#create', via:[:get, :post]
+   get '/auth/:provider/callback', to: 'sessions#create'
    match 'auth/failure', to: redirect('/'), via:[:get, :post]
    match 'signout', to: 'sessions#destroy', as: 'signout', via:[:get, :post]
   # Example of regular route:
